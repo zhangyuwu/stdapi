@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<PRJ Version="2.0">
+    <CPU Arch="ARM" Type="" />
+    <Application OutputName="stdapi" GenerateExecute="0" BeepAfterMake="-1" RunUserProgram="0" UserProgram="" />
+    <Compile IncludePath="./;./inc" LibraryPath="" PreDefine="DEBUG_INFO=0;RAW_UCOS=0" UserLib="" SyntaxIncompact="0" IncludeDebugInfo="0" />
+    <Link Text="01060000" Data="00002000" Bss="" LD="" Optimize="0" />
+    <Files>
+        <File Path="os_cpu_a.s" />
+        <File Path="README.TXT" />
+        <File Path="api_lib.c" />
+        <File Path="api_msg.c" />
+        <File Path="bin2str.c" />
+        <File Path="cksum_crc16.c" />
+        <File Path="cksum_crc32.c" />
+        <File Path="clearkeybuffer.c" />
+        <File Path="console.c" />
+        <File Path="cpu_irq.c" />
+        <File Path="debug.c" />
+        <File Path="des.c" />
+        <File Path="device.c" />
+        <File Path="dhcp.c" />
+        <File Path="displayline.c" />
+        <File Path="drawbmp.c" />
+        <File Path="drawstr.c" />
+        <File Path="ellipse.c" />
+        <File Path="err.c" />
+        <File Path="etharp.c" />
+        <File Path="ethernetif.c" />
+        <File Path="flash.c" />
+        <File Path="float2str.c" />
+        <File Path="font.c" />
+        <File Path="gbase.c" />
+        <File Path="getkey.c" />
+        <File Path="icmp.c" />
+        <File Path="inet.c" />
+        <File Path="inkey.c" />
+        <File Path="int2str.c" />
+        <File Path="ip.c" />
+        <File Path="ip_addr.c" />
+        <File Path="ip_frag.c" />
+        <File Path="keyboard.c" />
+        <File Path="kprintf.c" />
+        <File Path="lcd.c" />
+        <File Path="line.c" />
+        <File Path="loopif.c" />
+        <File Path="mem.c" />
+        <File Path="memory.c" />
+        <File Path="memp.c" />
+        <File Path="netif.c" />
+        <File Path="newlib.c" />
+        <File Path="outputf.c" />
+        <File Path="pbuf.c" />
+        <File Path="pixel.c" />
+        <File Path="polygon.c" />
+        <File Path="queue.c" />
+        <File Path="raw.c" />
+        <File Path="rectangle.c" />
+        <File Path="round.c" />
+        <File Path="rtl8019.c" />
+        <File Path="serial.c" />
+        <File Path="sockets.c" />
+        <File Path="stats.c" />
+        <File Path="stdapi.c" />
+        <File Path="strfmt.c" />
+        <File Path="strtoken.c" />
+        <File Path="sys.c" />
+        <File Path="sys_arch.c" />
+        <File Path="system.c" />
+        <File Path="tcp.c" />
+        <File Path="tcp_in.c" />
+        <File Path="tcp_out.c" />
+        <File Path="tcpip.c" />
+        <File Path="textmenu.c" />
+        <File Path="timer.c" />
+        <File Path="udp.c" />
+        <File Path="vstrfmt.c" />
+        <File Path="vt100.c" />
+        <File Path="waitkey.c" />
+        <File Path="inc\A_m40800.h" />
+        <File Path="inc\C_m40800.h" />
+        <File Path="inc\console.h" />
+        <File Path="inc\debug.h" />
+        <File Path="inc\des.h" />
+        <File Path="inc\device.h" />
+        <File Path="inc\fixedsys_8x16.h" />
+        <File Path="inc\font.h" />
+        <File Path="inc\gpio.h" />
+        <File Path="inc\graphics.h" />
+        <File Path="inc\keyboard.h" />
+        <File Path="inc\lcd.h" />
+        <File Path="inc\lwipopts.h" />
+        <File Path="inc\magic.h" />
+        <File Path="inc\memory.h" />
+        <File Path="inc\os_cfg.h" />
+        <File Path="inc\os_cpu.h" />
+        <File Path="inc\queue.h" />
+        <File Path="inc\rtl8019.h" />
+        <File Path="inc\serial.h" />
+        <File Path="inc\songti_8x8.h" />
+        <File Path="inc\std_c.h" />
+        <File Path="inc\stdapi.h" />
+        <File Path="inc\system.h" />
+        <File Path="inc\textmenu.h" />
+        <File Path="inc\timer.h" />
+        <File Path="inc\types.h" />
+        <File Path="inc\ucos_ii.h" />
+        <File Path="inc\util.h" />
+        <File Path="inc\vt100.h" />
+        <File Path="ucos_ii.c" />
+        <File Path="os_cpu_c.c" />
+        <File Path="gpio.c" />
+        <File Path="inputstring.c" />
+        <File Path="hotkey.c" />
+        <File Path="ipaddr2str.c" />
+        <File Path="list.c" />
+        <File Path="dialog.c" />
+        <File Path="ds1302.c" />
+        <File Path="progressbar.c" />
+        <File Path="inc\dialog.h" />
+        <File Path="backlight.c" />
+        <File Path="beep.c" />
+        <File Path="clearline.c" />
+        <File Path="gutil.c" />
+        <File Path="inc\gutil.h" />
+        <File Path="inc\flash.h" />
+        <File Path="ping.c" />
+    </Files>
+    <Bookmark />
+    <Open Active="etharp.c">
+        <File Path="stdapi.c" Pos="2289" SelStart="2289" SelEnd="2289" />
+        <File Path="system.c" Pos="39995" SelStart="39981" SelEnd="39995" />
+        <File Path="inc\system.h" Pos="9678" SelStart="9678" SelEnd="9678" />
+        <File Path="serial.c" Pos="2253" SelStart="2253" SelEnd="2253" />
+        <File Path="os_cpu_a.s" Pos="228" SelStart="209" SelEnd="228" />
+        <File Path="api_lib.c" Pos="740" SelStart="740" SelEnd="740" />
+        <File Path="clearkeybuffer.c" Pos="0" SelStart="0" SelEnd="0" />
+        <File Path="console.c" Pos="0" SelStart="0" SelEnd="0" />
+        <File Path="debug.c" Pos="6160" SelStart="6160" SelEnd="6160" />
+        <File Path="device.c" Pos="11650" SelStart="11644" SelEnd="11650" />
+        <File Path="newlib.c" Pos="6633" SelStart="6633" SelEnd="6633" />
+        <File Path="memory.c" Pos="12068" SelStart="12068" SelEnd="12068" />
+        <File Path="pixel.c" Pos="0" SelStart="0" SelEnd="0" />
+        <File Path="lcd.c" Pos="1189" SelStart="1189" SelEnd="1189" />
+        <File Path="line.c" Pos="1692" SelStart="1692" SelEnd="1692" />
+        <File Path="queue.c" Pos="0" SelStart="0" SelEnd="0" />
+        <File Path="round.c" Pos="0" SelStart="0" SelEnd="0" />
+        <File Path="inc\dialog.h" Pos="562" SelStart="562" SelEnd="562" />
+        <File Path="keyboard.c" Pos="728" SelStart="728" SelEnd="728" />
+        <File Path="cksum_crc16.c" Pos="640" SelStart="640" SelEnd="640" />
+        <File Path="int2str.c" Pos="1575" SelStart="1575" SelEnd="1575" />
+        <File Path="strfmt.c" Pos="0" SelStart="0" SelEnd="0" />
+        <File Path="vstrfmt.c" Pos="0" SelStart="0" SelEnd="0" />
+        <File Path="bin2str.c" Pos="660" SelStart="660" SelEnd="660" />
+        <File Path="ds1302.c" Pos="2960" SelStart="2960" SelEnd="2960" />
+        <File Path="float2str.c" Pos="1671" SelStart="1671" SelEnd="1671" />
+        <File Path="des.c" Pos="0" SelStart="0" SelEnd="0" />
+        <File Path="inc\queue.h" Pos="0" SelStart="0" SelEnd="0" />
+        <File Path="outputf.c" Pos="790" SelStart="790" SelEnd="790" />
+        <File Path="ethernetif.c" Pos="7421" SelStart="7421" SelEnd="7421" />
+        <File Path="etharp.c" Pos="25813" SelStart="25813" SelEnd="25813" />
+    </Open>
+    <Todo />
+    <Search>
+        <Item Text="getcurrentdate" />
+        <Item Text="CPU_CLOCK" />
+        <Item Text="baud" />
+        <Item Text="dump" />
+        <Item Text="kill" />
+        <Item Text="SetSemaphore" />
+        <Item Text="IRQ_PRIORITY_LOWEST" />
+        <Item Text="OS_TASK_SW" />
+        <Item Text="OSCtxSw" />
+        <Item Text="OSSemPost" />
+        <Item Text="post" />
+        <Item Text="EnableAIC" />
+        <Item Text="ADD_OSIntNesting" />
+        <Item Text="ERR" />
+        <Item Text="gpio" />
+        <Item Text="str" />
+        <Item Text="sleep" />
+        <Item Text="OS_MAX_EVENTS" />
+        <Item Text="OSTimeDly" />
+        <Item Text="OSTimedly" />
+        <Item Text="OS_TICKS_PER_SEC" />
+    </Search>
+    <Replace>
+        <Item Text="sleep" />
+        <Item Text="ERROR_OS_BASE" />
+        <Item Text="u)" />
+        <Item Text="A5" />
+        <Item Text="UINT" />
+        <Item Text="ushort" />
+        <Item Text="ulong" />
+        <Item Text="inp16" />
+        <Item Text="outp16" />
+        <Item Text="0x%08x" />
+        <Item Text="\t/*" />
+        <Item Text="%8d" />
+        <Item Text="// " />
+        <Item Text="p" />
+        <Item Text="#if (__HAVE_OS__ &gt; 0)" />
+        <Item Text="sem_eth" />
+        <Item Text="{ " />
+        <Item Text='&quot; },' />
+        <Item Text=', &quot;' />
+        <Item Text="{" />
+    </Replace>
+</PRJ>

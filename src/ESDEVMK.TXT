@@ -1,0 +1,215 @@
+# ------------------------------------------------------
+# Embed-Soft EBuilder 2.0 Makefile generator
+# http://www.embed-soft.com
+# 2006-10-03 17:59:47
+# ------------------------------------------------------
+
+EBUILDER 	= C:/EBuilder2.0
+CC 		= arm-elf-gcc
+CXX 		= arm-elf-g++
+OBJCOPY 	= arm-elf-objcopy
+AR 		= arm-elf-ar
+LD 		= arm-elf-ld
+OUTPUT_DIR 	= ./
+OUTPUT_NAME 	= stdapi.a
+OUTPUT_BIN  	= stdapi.bin
+LIB 		= $(EBUILDER)/compiler/arm-elf/lib
+GCCLIB 		= $(EBUILDER)/compiler/arm-elf/lib/gcc-lib/arm-elf/3.0.3
+EBC_LIB 	= 
+
+TEXT 		= 01060000
+DATA 		= 00002000
+
+INC_PATH 	= -I"$(EBUILDER)/compiler/arm-elf/include" -I"$(EBUILDER)/compiler/arm-elf/lib/gcc-lib/arm-elf/3.0.3/include" -I"./" -I"./inc" 
+DEFINE 	=  -DDEBUG_INFO=0 -DRAW_UCOS=0
+CPPFLAGS 	= $(INC_PATH) $(DEFINE)
+ENDIAN_AS 	= -Wa,-EL
+ENDIANFLAG 	= -mlittle-endian  -A 'endian(little)'
+CFLAGS 		+= $(INC_PATH) $(DEFINE) $(ENDIANFLAG) -DMACHINE_TYPE_ARM -O0  -Wall
+ASFLAGS 	= -x assembler-with-cpp -Wa,--gstabs -Wa,-mall $(ENDIAN_AS)
+LDFLAGS 	= -n -N -nostartupfiles -static -EL -e_start -g -Map Mapstdapi.txt
+LINK_DIR 	= ./
+LINK_SCRIPT 	:= "C:/EBuilder2.0/bin/arm-elf.ld"
+LIBS 	=  $(LIB)/libm.a $(LIB)/libc.a $(GCCLIB)/libgcc.a
+
+SOURCES 	= os_cpu_a.s api_lib.c api_msg.c bin2str.c cksum_crc16.c cksum_crc32.c clearkeybuffer.c console.c cpu_irq.c debug.c des.c device.c dhcp.c displayline.c drawbmp.c drawstr.c ellipse.c err.c etharp.c ethernetif.c flash.c float2str.c font.c gbase.c getkey.c icmp.c inet.c inkey.c int2str.c ip.c ip_addr.c ip_frag.c keyboard.c kprintf.c lcd.c line.c loopif.c mem.c memory.c memp.c netif.c newlib.c outputf.c pbuf.c pixel.c polygon.c queue.c raw.c rectangle.c round.c rtl8019.c serial.c sockets.c stats.c stdapi.c strfmt.c strtoken.c sys.c sys_arch.c system.c tcp.c tcp_in.c tcp_out.c tcpip.c textmenu.c timer.c udp.c vstrfmt.c vt100.c waitkey.c ucos_ii.c os_cpu_c.c gpio.c inputstring.c hotkey.c ipaddr2str.c list.c dialog.c ds1302.c progressbar.c backlight.c beep.c clearline.c gutil.c ping.c 
+OBJECTS 	:= os_cpu_a.o api_lib.o api_msg.o bin2str.o cksum_crc16.o cksum_crc32.o clearkeybuffer.o console.o cpu_irq.o debug.o des.o device.o dhcp.o displayline.o drawbmp.o drawstr.o ellipse.o err.o etharp.o ethernetif.o flash.o float2str.o font.o gbase.o getkey.o icmp.o inet.o inkey.o int2str.o ip.o ip_addr.o ip_frag.o keyboard.o kprintf.o lcd.o line.o loopif.o mem.o memory.o memp.o netif.o newlib.o outputf.o pbuf.o pixel.o polygon.o queue.o raw.o rectangle.o round.o rtl8019.o serial.o sockets.o stats.o stdapi.o strfmt.o strtoken.o sys.o sys_arch.o system.o tcp.o tcp_in.o tcp_out.o tcpip.o textmenu.o timer.o udp.o vstrfmt.o vt100.o waitkey.o ucos_ii.o os_cpu_c.o gpio.o inputstring.o hotkey.o ipaddr2str.o list.o dialog.o ds1302.o progressbar.o backlight.o beep.o clearline.o gutil.o ping.o 
+
+all: $(OBJECTS) $(OUTPUT_NAME)
+os_cpu_a.o : os_cpu_a.s
+	$(CC) -c $(CFLAGS) $(ASFLAGS) os_cpu_a.s
+api_lib.o : api_lib.c
+	$(CC) -c $(CFLAGS) api_lib.c
+api_msg.o : api_msg.c
+	$(CC) -c $(CFLAGS) api_msg.c
+bin2str.o : bin2str.c
+	$(CC) -c $(CFLAGS) bin2str.c
+cksum_crc16.o : cksum_crc16.c
+	$(CC) -c $(CFLAGS) cksum_crc16.c
+cksum_crc32.o : cksum_crc32.c
+	$(CC) -c $(CFLAGS) cksum_crc32.c
+clearkeybuffer.o : clearkeybuffer.c
+	$(CC) -c $(CFLAGS) clearkeybuffer.c
+console.o : console.c
+	$(CC) -c $(CFLAGS) console.c
+cpu_irq.o : cpu_irq.c
+	$(CC) -c $(CFLAGS) cpu_irq.c
+debug.o : debug.c
+	$(CC) -c $(CFLAGS) debug.c
+des.o : des.c
+	$(CC) -c $(CFLAGS) des.c
+device.o : device.c
+	$(CC) -c $(CFLAGS) device.c
+dhcp.o : dhcp.c
+	$(CC) -c $(CFLAGS) dhcp.c
+displayline.o : displayline.c
+	$(CC) -c $(CFLAGS) displayline.c
+drawbmp.o : drawbmp.c
+	$(CC) -c $(CFLAGS) drawbmp.c
+drawstr.o : drawstr.c
+	$(CC) -c $(CFLAGS) drawstr.c
+ellipse.o : ellipse.c
+	$(CC) -c $(CFLAGS) ellipse.c
+err.o : err.c
+	$(CC) -c $(CFLAGS) err.c
+etharp.o : etharp.c
+	$(CC) -c $(CFLAGS) etharp.c
+ethernetif.o : ethernetif.c
+	$(CC) -c $(CFLAGS) ethernetif.c
+flash.o : flash.c
+	$(CC) -c $(CFLAGS) flash.c
+float2str.o : float2str.c
+	$(CC) -c $(CFLAGS) float2str.c
+font.o : font.c
+	$(CC) -c $(CFLAGS) font.c
+gbase.o : gbase.c
+	$(CC) -c $(CFLAGS) gbase.c
+getkey.o : getkey.c
+	$(CC) -c $(CFLAGS) getkey.c
+icmp.o : icmp.c
+	$(CC) -c $(CFLAGS) icmp.c
+inet.o : inet.c
+	$(CC) -c $(CFLAGS) inet.c
+inkey.o : inkey.c
+	$(CC) -c $(CFLAGS) inkey.c
+int2str.o : int2str.c
+	$(CC) -c $(CFLAGS) int2str.c
+ip.o : ip.c
+	$(CC) -c $(CFLAGS) ip.c
+ip_addr.o : ip_addr.c
+	$(CC) -c $(CFLAGS) ip_addr.c
+ip_frag.o : ip_frag.c
+	$(CC) -c $(CFLAGS) ip_frag.c
+keyboard.o : keyboard.c
+	$(CC) -c $(CFLAGS) keyboard.c
+kprintf.o : kprintf.c
+	$(CC) -c $(CFLAGS) kprintf.c
+lcd.o : lcd.c
+	$(CC) -c $(CFLAGS) lcd.c
+line.o : line.c
+	$(CC) -c $(CFLAGS) line.c
+loopif.o : loopif.c
+	$(CC) -c $(CFLAGS) loopif.c
+mem.o : mem.c
+	$(CC) -c $(CFLAGS) mem.c
+memory.o : memory.c
+	$(CC) -c $(CFLAGS) memory.c
+memp.o : memp.c
+	$(CC) -c $(CFLAGS) memp.c
+netif.o : netif.c
+	$(CC) -c $(CFLAGS) netif.c
+newlib.o : newlib.c
+	$(CC) -c $(CFLAGS) newlib.c
+outputf.o : outputf.c
+	$(CC) -c $(CFLAGS) outputf.c
+pbuf.o : pbuf.c
+	$(CC) -c $(CFLAGS) pbuf.c
+pixel.o : pixel.c
+	$(CC) -c $(CFLAGS) pixel.c
+polygon.o : polygon.c
+	$(CC) -c $(CFLAGS) polygon.c
+queue.o : queue.c
+	$(CC) -c $(CFLAGS) queue.c
+raw.o : raw.c
+	$(CC) -c $(CFLAGS) raw.c
+rectangle.o : rectangle.c
+	$(CC) -c $(CFLAGS) rectangle.c
+round.o : round.c
+	$(CC) -c $(CFLAGS) round.c
+rtl8019.o : rtl8019.c
+	$(CC) -c $(CFLAGS) rtl8019.c
+serial.o : serial.c
+	$(CC) -c $(CFLAGS) serial.c
+sockets.o : sockets.c
+	$(CC) -c $(CFLAGS) sockets.c
+stats.o : stats.c
+	$(CC) -c $(CFLAGS) stats.c
+stdapi.o : stdapi.c
+	$(CC) -c $(CFLAGS) stdapi.c
+strfmt.o : strfmt.c
+	$(CC) -c $(CFLAGS) strfmt.c
+strtoken.o : strtoken.c
+	$(CC) -c $(CFLAGS) strtoken.c
+sys.o : sys.c
+	$(CC) -c $(CFLAGS) sys.c
+sys_arch.o : sys_arch.c
+	$(CC) -c $(CFLAGS) sys_arch.c
+system.o : system.c
+	$(CC) -c $(CFLAGS) system.c
+tcp.o : tcp.c
+	$(CC) -c $(CFLAGS) tcp.c
+tcp_in.o : tcp_in.c
+	$(CC) -c $(CFLAGS) tcp_in.c
+tcp_out.o : tcp_out.c
+	$(CC) -c $(CFLAGS) tcp_out.c
+tcpip.o : tcpip.c
+	$(CC) -c $(CFLAGS) tcpip.c
+textmenu.o : textmenu.c
+	$(CC) -c $(CFLAGS) textmenu.c
+timer.o : timer.c
+	$(CC) -c $(CFLAGS) timer.c
+udp.o : udp.c
+	$(CC) -c $(CFLAGS) udp.c
+vstrfmt.o : vstrfmt.c
+	$(CC) -c $(CFLAGS) vstrfmt.c
+vt100.o : vt100.c
+	$(CC) -c $(CFLAGS) vt100.c
+waitkey.o : waitkey.c
+	$(CC) -c $(CFLAGS) waitkey.c
+ucos_ii.o : ucos_ii.c
+	$(CC) -c $(CFLAGS) ucos_ii.c
+os_cpu_c.o : os_cpu_c.c
+	$(CC) -c $(CFLAGS) os_cpu_c.c
+gpio.o : gpio.c
+	$(CC) -c $(CFLAGS) gpio.c
+inputstring.o : inputstring.c
+	$(CC) -c $(CFLAGS) inputstring.c
+hotkey.o : hotkey.c
+	$(CC) -c $(CFLAGS) hotkey.c
+ipaddr2str.o : ipaddr2str.c
+	$(CC) -c $(CFLAGS) ipaddr2str.c
+list.o : list.c
+	$(CC) -c $(CFLAGS) list.c
+dialog.o : dialog.c
+	$(CC) -c $(CFLAGS) dialog.c
+ds1302.o : ds1302.c
+	$(CC) -c $(CFLAGS) ds1302.c
+progressbar.o : progressbar.c
+	$(CC) -c $(CFLAGS) progressbar.c
+backlight.o : backlight.c
+	$(CC) -c $(CFLAGS) backlight.c
+beep.o : beep.c
+	$(CC) -c $(CFLAGS) beep.c
+clearline.o : clearline.c
+	$(CC) -c $(CFLAGS) clearline.c
+gutil.o : gutil.c
+	$(CC) -c $(CFLAGS) gutil.c
+ping.o : ping.c
+	$(CC) -c $(CFLAGS) ping.c
+
+$(OUTPUT_NAME): $(OBJECTS)
+	$(AR) rcs stdapi.a $(OBJECTS)
+	@echo [stdapi.a] CREATED SUCCESSFUL!
+.PHONY: clean
+clean:
+	rm -f $(OBJECTS)
